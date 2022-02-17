@@ -34,7 +34,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
     font-family: 'Roboto Condensed', sans-serif;
-	background-color: #BF181D;
+	background-color: #961316;
 }
 ol, ul {
 	list-style: none;
