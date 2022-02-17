@@ -9,8 +9,9 @@ export default function SearchBox(props) {
   function handleSearch(e) {
     e.preventDefault();
     setIsLoading(true);
-
-    searchProducts(searchField)
+    setResults({});
+    const cleanSearchField = searchField.replace(/ /g, "");
+    searchProducts(cleanSearchField)
       .then((res) => {
         setResults(res.data);
         setIsLoading(false);
