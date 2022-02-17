@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { BallTriangle } from "react-loader-spinner";
+import Loader from "./Loader";
+import StyledWarning from "./Warning";
 
 export default function ResultList(props) {
   const { itens, isLoading } = props;
@@ -7,11 +8,9 @@ export default function ResultList(props) {
   return (
     <List>
       {isLoading ? (
-        <LoaderContainer>
-          <BallTriangle color="#961316" height={100} width={100} />
-        </LoaderContainer>
+        <Loader />
       ) : !itens ? (
-        <Warning>Nenhum resultado :(</Warning>
+        <StyledWarning>Nenhum resultado :(</StyledWarning>
       ) : (
         <>
           <ListTitle>Resultados: </ListTitle>
@@ -30,10 +29,10 @@ export default function ResultList(props) {
 }
 
 const List = styled.ul`
-  margin-top: 25px;
+  margin-top: 20px;
   background-color: #ffffff;
-  width: 100%;
-  height: 500px;
+  width: 700px;
+  height: 400px;
   border-radius: 8px;
   padding: 10px 20px;
   position: relative;
@@ -61,19 +60,4 @@ const Name = styled.span`
 
 const Number = styled.span`
   font-weight: bold;
-`;
-
-const Warning = styled.span`
-  font-size: 26px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
-
-const LoaderContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 `;

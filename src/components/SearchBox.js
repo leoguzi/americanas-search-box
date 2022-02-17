@@ -10,7 +10,7 @@ export default function SearchBox(props) {
     e.preventDefault();
     setIsLoading(true);
     setResults({});
-    const cleanSearchField = searchField.replace(/ /g, "");
+    const cleanSearchField = searchField.replace(/ /g, "&");
     searchProducts(cleanSearchField)
       .then((res) => {
         setResults(res.data);
@@ -33,26 +33,29 @@ export default function SearchBox(props) {
 }
 
 const SearchContainer = styled.form`
-  margin-top: 25px;
+  margin-top: 20px;
+  width: 700px;
   display: flex;
   justify-content: space-between;
 `;
 
 const StyledInput = styled.input`
-  width: 450px;
+  width: 460px;
   height: 45px;
   border-radius: 5px;
   border: none;
-  padding-left: 10px;
+  padding-left: 20px;
   font-size: 20px;
 `;
 
 const StyledButton = styled.button`
+  cursor: pointer;
   width: 200px;
   height: 45px;
-  background-color: #ed7377;
+  background-color: #746c70;
   border-radius: 5px;
   border: none;
   font-size: 20px;
   font-weight: bold;
+  color: white;
 `;
